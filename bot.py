@@ -72,7 +72,7 @@ while True:
                f"               ⬇️ Received - {received_traff_total} GB")
 
     # send message
-    bot.send_message(CHANNEL_ID_TEST, message)
+    bot.send_message(CHANNEL_ID_MAIN, message)
 
     # sleep after message
     time.sleep(30 * 60)
