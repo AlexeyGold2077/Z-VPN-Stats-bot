@@ -5,6 +5,9 @@ import time
 import subprocess
 from datetime import datetime
 
+# configure channel id main/test
+CHANNEL_ID = CHANNEL_ID_MAIN
+
 bot = telebot.TeleBot(TOKEN)
 
 # configure shell commands
@@ -12,6 +15,7 @@ vnstat_script = 'vnstat -i eth0 --json > vnstat.txt'
 speed_test_cli_script = 'speedtest-cli --secure --json > speed_test_cli.txt'
 
 while True:
+
     # run commands
     subprocess.run(vnstat_script, shell=True, check=False, text=True, capture_output=True)
     subprocess.run(speed_test_cli_script, shell=True, check=False, text=True, capture_output=True)
@@ -72,7 +76,7 @@ while True:
                f"               ⬇️ Received - {received_traff_total} GB")
 
     # send message
-    bot.send_message(CHANNEL_ID_MAIN, message)
+    bot.send_message(CHANNEL_ID, message)
 
     # sleep after message
     time.sleep(30 * 60)
