@@ -75,5 +75,4 @@ while True:
     bot.send_message(CHANNEL_ID_TEST, message)
 
     # sleep after message
-    time.sleep(5 * 60)
-    # time.sleep(1 * 86400)
+    time.sleep(30 * 60)
